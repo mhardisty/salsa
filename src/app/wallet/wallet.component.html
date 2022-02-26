@@ -1,0 +1,4 @@
+<button mat-button *ngIf="publicKey==null" (click)="generateKeyPair()">Generate keys</button>
+<!-- <button mat-button *ngIf="publicKey==null" (click)="requestSol()">Request soul</button> -->
+<p>Public Key: {{ publicKey }}</p>
+<p>Private Key: {{ secretKey }}</p>

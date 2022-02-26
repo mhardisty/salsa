@@ -1,0 +1,22 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">account_balance_wallet</mat-icon>
+    </ng-template>
+
+    <app-wallet></app-wallet>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">sync_alt</mat-icon>
+    </ng-template>
+    <app-qr-scanner></app-qr-scanner>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">people</mat-icon>
+    </ng-template>
+    Content 2
+  </mat-tab>
+</mat-tab-group>

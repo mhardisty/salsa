@@ -1,0 +1,22 @@
+<button mat-raised-button color="primary" (click)="startScan()" *ngIf="!scanActive">
+  <mat-icon>qr_code_2</mat-icon> Scan
+</button>
+<button mat-raised-button color="warn" (click)="stopScan()" *ngIf="scanActive">
+  <mat-icon>cancel</mat-icon> Cancel
+</button>
+<button (click)="reset()" *ngIf="scanResult">Reset</button>
+
+<!-- <video #video [hidden]="!scanActive" width="50%"></video> -->
+<div>
+  <div hidden>
+    <p>video</p>
+    <video #video width="50%"></video>
+  </div>
+
+  <div [hidden]="!scanActive">
+    <p>canvas</p>
+    <canvas #canvas width="50%"></canvas>
+  </div>
+</div>
+
+<div *ngIf="scanResult">{{ scanResult }}</div>
