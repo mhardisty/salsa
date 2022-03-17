@@ -1,0 +1,49 @@
+<mat-toolbar>
+  <app-back-button target="/"></app-back-button>
+  <h1>Receive</h1>
+</mat-toolbar>
+<div class="outer">
+  <mat-form-field class="full-width" *ngIf="!showing">
+    <mat-label>Request Amount (SOL)</mat-label>
+    <input
+      matInput
+      #messageField
+      type="number"
+      autocomplete="off"
+      class="full-width"
+      [ngModelOptions]="{ standalone: true }"
+      [(ngModel)]="amount"
+    />
+  </mat-form-field>
+  <mat-form-field class="full-width" *ngIf="!showing">
+    <mat-label>Payment Reason</mat-label>
+    <input
+      matInput
+      #messageField
+      type="text"
+      autocomplete="off"
+      class="full-width"
+      [ngModelOptions]="{ standalone: true }"
+      [(ngModel)]="memo"
+    />
+  </mat-form-field>
+  <div #canvas></div>
+  <button
+    mat-raised-button
+    class="full-width"
+    *ngIf="!showing"
+    color="primary"
+    (click)="show()"
+  >
+    <mat-icon>qr_code_2</mat-icon>Show
+  </button>
+  <button
+    mat-button
+    class="full-width"
+    *ngIf="showing"
+    color="warn"
+    (click)="cancel()"
+  >
+    <mat-icon>cross</mat-icon>Cancel
+  </button>
+</div>

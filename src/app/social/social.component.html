@@ -1,0 +1,15 @@
+<div class="outer">
+  <h1>Transaction History</h1>
+  <div *ngFor="let tx of transactions" class="conversation">
+    <mat-card (click)="goToConversation(tx)">
+      <div
+        >
+        <span class="from-side">{{ tx.from }}</span>
+        <mat-icon>chevron_right</mat-icon>
+        <span class="to-side">{{ tx.to }}</span>
+        </div
+      >
+      <mat-card-subtitle>{{ tx.amount }} SOL <span style="float:right">{{ asDate(tx.blockTime) }}</span></mat-card-subtitle>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="outer">
+  <h1>New Account</h1>
+
+  <form class="key-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nickname</mat-label>
+      <input matInput #message maxlength="100" type="text" [ngModelOptions]="{standalone: true}" placeholder="🐷💰" [(ngModel)]="nickname"/>
+      <mat-hint align="start">You can change this later </mat-hint>
+      <mat-hint align="end">{{ message.value.length }} / 100</mat-hint>
+    </mat-form-field>
+  </form>
+
+<div class="table-padder">
+    <h4>Secret phrase</h4>
+    <table>
+        <tr>
+          <td>{{ generatedMnemonic[0] }}</td>
+          <td>{{ generatedMnemonic[1] }}</td>
+          <td>{{ generatedMnemonic[2] }}</td>
+          <td>{{ generatedMnemonic[3] }}</td>
+        </tr>
+        <tr>
+          <td>{{ generatedMnemonic[4] }}</td>
+          <td>{{ generatedMnemonic[5] }}</td>
+          <td>{{ generatedMnemonic[6] }}</td>
+          <td>{{ generatedMnemonic[7] }}</td>
+        </tr>
+        <tr>
+          <td>{{ generatedMnemonic[8] }}</td>
+          <td>{{ generatedMnemonic[9] }}</td>
+          <td>{{ generatedMnemonic[10] }}</td>
+          <td>{{ generatedMnemonic[11] }}</td>
+        </tr>
+      </table>
+    
+</div>
+  <div class="save-warning">
+    <p><mat-icon>privacy_tip</mat-icon>Saving your secret phrase is critical.</p>
+  </div>
+  <button mat-stroked-button (click)="saveKey()"><mat-icon>save</mat-icon>Save</button>
+</div>

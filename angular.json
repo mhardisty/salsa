@@ -21,6 +21,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
+              "bip39",
               "@solana/buffer-layout",
               "borsh",
               "bs58",
@@ -28,7 +29,10 @@
               "jayson/lib/client/browser",
               "rpc-websockets",
               "secp256k1",
-              "tweetnacl"
+              "tweetnacl",
+              "@ledgerhq/devices/lib/hid-framing",
+              "eth-rpc-errors",
+              "pump"
             ],
             "outputPath": "dist/salsa",
             "index": "src/index.html",
@@ -54,8 +58,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "3000kb",
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -118,6 +122,16 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "salsa:build:production",
+            "firebaseProject": "solana-salsa",
+            "firebaseHostingSite": "solana-salsa"
           }
         }
       }

@@ -1,0 +1,26 @@
+<div *ngIf="friendAccount==null">
+    <form>
+        <mat-form-field class="full-width">
+          <mat-label>Search</mat-label>
+          <input
+            matInput
+            #searchBox
+            autocomplete="off"
+            id="search-box"
+            (input)="search(searchBox.value)"
+          />
+          <mat-hint align="start">Case-sensitive</mat-hint>
+        </mat-form-field>
+      </form>
+      
+      <div *ngFor="let friend of friend$ | async">
+        <button mat-button class="full-width" (click)="select(friend)">
+          {{ friend.username }} 
+        </button>
+      </div>
+</div>
+<div *ngIf="friendAccount!=null" class="full-width">
+    <span>TO: {{ friendAccount.username }}</span>
+    <button mat-button (click)="clearFriend()" class="right-side"><mat-icon>clear</mat-icon></button>
+</div>
+

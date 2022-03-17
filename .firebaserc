@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "solana-salsa": {
+      "hosting": {
+        "salsa": [
+          "solana-salsa"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "solana-salsa"
+  }
+}

@@ -1,0 +1,49 @@
+<mat-toolbar color="white">
+  <app-back-button target="/"></app-back-button>
+  <h1>Send Money</h1>
+</mat-toolbar>
+<div class="outer">
+  <h3>
+    <mat-icon>person_outline</mat-icon> Paying as
+    <strong>{{ myUsername }}</strong>
+  </h3>
+  <app-find-friend
+    (friendFound)="setFriendName($event)"
+    (targetKey)="setTargetKey($event)"
+  ></app-find-friend>
+
+  <mat-form-field class="full-width">
+    <mat-label>Description</mat-label>
+    <input
+      matInput
+      #messageField
+      maxlength="100"
+      type="text"
+      class="full-width"
+      placeholder="Thanks for the ☕"
+      [ngModelOptions]="{ standalone: true }"
+      [(ngModel)]="message"
+    />
+    <mat-hint align="end">{{ messageField.value.length }} / 100</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Amount (SOL)</mat-label>
+    <input
+      matInput
+      #amountField
+      type="number"
+      autocomplete="off"
+      class="full-width"
+      [ngModelOptions]="{ standalone: true }"
+      [(ngModel)]="amount"
+    />
+  </mat-form-field>
+
+  <app-select-and-pay
+    *ngIf="ready()"
+    [recipient]="targetKey"
+    [amount]="asBigNumber(amount)"
+    [memo]="message"
+  ></app-select-and-pay>
+</div>

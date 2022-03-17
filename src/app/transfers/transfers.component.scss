@@ -1,0 +1,37 @@
+.outer {
+  padding: 5%;
+}
+button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.bottom-button{
+  background-color: rgb(255, 149, 11);
+  color: white;
+}
+h1 { 
+  font-weight: bold;
+}
+.solana-pay {
+  display: block;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+
+  span {
+    display: inline;
+    font-size: larger;
+  }
+  img {
+    display: inline;
+  }
+}
+
+// .bottom-of-page {
+//   display: table;
+//   width: 100%;
+//   position: absolute;
+//   top: 85vh;
+//   transform: translateY(-100%); 
+// }

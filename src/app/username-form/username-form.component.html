@@ -1,0 +1,36 @@
+<div class="outer">
+    <h1>Username Settings</h1>
+    <h3>Don't be a stranger! Let people know who you are!</h3>
+    <p *ngIf="hasUsername">Your current username is <strong>{{ currentUsername }}</strong> </p>
+  
+    <form class="key-form">
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            maxlength="25" 
+            autocomplete="off"
+            #message
+            type="text"
+            [ngModelOptions]="{ standalone: true }"
+            [(ngModel)]="username"
+          />
+          <mat-hint align="start">You can change this later </mat-hint>
+          <mat-hint align="end">{{ message.value.length }} / 25</mat-hint>
+        </mat-form-field>
+      </div>
+  
+
+    </form>
+  
+    <!-- <div class="save-warning">
+      <p>
+        <mat-icon>information</mat-icon>Let people kno.
+      </p>
+    </div> -->
+    <button mat-stroked-button (click)="saveName()">
+      <mat-icon>save</mat-icon>Save
+    </button>
+  </div>
+  

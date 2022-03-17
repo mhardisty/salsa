@@ -1,0 +1,10 @@
+<button
+  mat-raised-button
+  *ngFor="let key of keys"
+  color="primary"
+  class="full-width"
+  (click)="select(key)"
+  [disabled]="!available(key)"
+>
+  Pay with {{ key.nickname }}?
+</button>

@@ -1,0 +1,35 @@
+<div class="outer">
+  <app-goto-login [message]="'It\'s more fun when you login!'"></app-goto-login>
+  <h1>Pay</h1>
+
+  <button
+    mat-raised-button
+    class="sidebyside"
+    color="primary"
+    (click)="goToScanner()"
+  >
+    <mat-icon aria-label="scanner">qr_code_2</mat-icon>
+    Scan to Pay
+  </button>
+
+  <button mat-raised-button (click)="goToUsernamePay()" color="primary">
+    <mat-icon>person</mat-icon> Pay with Username
+  </button>
+  <h1>Request</h1>
+
+  <button
+    mat-raised-button
+    class="sidebyside"
+    color="accent"
+    (click)="goToDisplayQR()"
+  >
+    <mat-icon>qr_code_2</mat-icon>
+    Request with QR
+  </button>
+</div>
+<div class="bottom-of-page">
+  <div class="solana-pay">
+    <span>Powered by</span>
+    <img src="assets/solana-pay.svg" alt="solana pay" />
+  </div>
+</div>

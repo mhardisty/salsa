@@ -1,22 +1,37 @@
-<button mat-raised-button color="primary" (click)="startScan()" *ngIf="!scanActive">
-  <mat-icon>qr_code_2</mat-icon> Scan
-</button>
-<button mat-raised-button color="warn" (click)="stopScan()" *ngIf="scanActive">
-  <mat-icon>cancel</mat-icon> Cancel
-</button>
-<button (click)="reset()" *ngIf="scanResult">Reset</button>
+<mat-toolbar>
+  <app-back-button target="/"></app-back-button>
+  <h1>Scan to Pay</h1>
+</mat-toolbar>
 
-<!-- <video #video [hidden]="!scanActive" width="50%"></video> -->
-<div>
-  <div hidden>
-    <p>video</p>
-    <video #video width="50%"></video>
-  </div>
+<div class="outer">
+  <button
+    mat-raised-button
+    color="primary"
+    class="full-width"
+    (click)="startScan()"
+    *ngIf="!scanActive"
+  >
+    <mat-icon>qr_code_2</mat-icon>Start Scan
+  </button>
+  <button
+    mat-raised-button
+    class="full-width"
+    color="warn"
+    (click)="stopScan()"
+    *ngIf="scanActive"
+  >
+    <mat-icon>cancel</mat-icon> Cancel
+  </button>
+  <button mat-raised-button (click)="reset()" *ngIf="scanResult">Reset</button>
 
-  <div [hidden]="!scanActive">
-    <p>canvas</p>
-    <canvas #canvas width="50%"></canvas>
+  <div>
+    <div [hidden]="!scanActive">
+      <video #video></video>
+    </div>
+
+    <div hidden>
+      <canvas #canvas></canvas>
+    </div>
   </div>
+  <div *ngIf="scanResult"><app-solana-pay-processor [requestURL]="scanResult"></app-solana-pay-processor></div>
 </div>
-
-<div *ngIf="scanResult">{{ scanResult }}</div>

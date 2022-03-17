@@ -1,22 +1,30 @@
-<mat-tab-group mat-align-tabs="center">
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">account_balance_wallet</mat-icon>
-    </ng-template>
-
-    <app-wallet></app-wallet>
-  </mat-tab>
+<mat-tab-group mat-align-tabs="center" mat-stretch-tabs>
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">sync_alt</mat-icon>
     </ng-template>
-    <app-qr-scanner></app-qr-scanner>
+    <app-transfers></app-transfers>
   </mat-tab>
 
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">people</mat-icon>
     </ng-template>
-    Content 2
+    <app-social></app-social>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">account_balance_wallet</mat-icon>
+    </ng-template>
+    <app-wallet></app-wallet>
   </mat-tab>
 </mat-tab-group>
+
+<!-- <nav mat-tab-nav-bar>
+  <a mat-tab-link href="/transfers" (click)="activeLink = '/transfers'" [active]="activeLink=='/transfers'"> Transfers </a>
+  <a mat-tab-link href="/social" (click)="activeLink = '/social'" [active]="activeLink=='/social'"> social </a>
+  <a mat-tab-link href="/wallet" (click)="activeLink = '/wallet'" [active]="activeLink=='/wallet'"> wallet </a>
+</nav> 
+
+<router-outlet></router-outlet> -->

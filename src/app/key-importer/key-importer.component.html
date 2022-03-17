@@ -1,0 +1,46 @@
+<div class="outer">
+  <h1>Import</h1>
+
+  <form class="key-form">
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nickname</mat-label>
+        <input
+          matInput
+          #message
+          type="text"
+          [ngModelOptions]="{ standalone: true }"
+          placeholder="🐷💰"
+          [(ngModel)]="nickname"
+        />
+        <mat-hint align="start">You can change this later </mat-hint>
+        <mat-hint align="end">{{ message.value.length }} / 100</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Public Key</mat-label>
+        <input
+          matInput
+          #message
+          maxlength="100"
+          type="text"
+          [ngModelOptions]="{ standalone: true }"
+          placeholder="HBXAAy1GrUmmLZmbmE1M85fn8s8HBoXXveBs9baDxswE"
+          [(ngModel)]="address"
+        />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div class="save-warning">
+    <p>
+      <mat-icon>information</mat-icon>You won't be able to send from this
+      address
+    </p>
+  </div>
+  <button mat-stroked-button (click)="saveKey()">
+    <mat-icon>save</mat-icon>Save
+  </button>
+</div>

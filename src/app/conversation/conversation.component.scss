@@ -1,0 +1,33 @@
+h1 {
+  font-weight: bold;
+}
+
+.outer {
+  padding: 5%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.less-spacing {
+  margin-bottom: 5px;
+}
+.msg-width {
+  float: left;
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+.right-side {
+  float: right;
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+.spaced {
+  margin-top: 10px;
+}
+mat-card {
+  border: 1px solid rgb(63, 81, 181);
+}

@@ -1,0 +1,44 @@
+<mat-toolbar color="primary"
+  ><app-back-button target="/"></app-back-button>
+  <h1>Chat Messages</h1>
+</mat-toolbar>
+<div class="outer">
+  <h3 *ngIf="messages.length == 0">No messages yet... 😔</h3>
+  <div
+    class="full-width"
+    *ngFor="let msg of messages"
+    [ngClass]="msg.uid == selfId ? 'right-side' : 'msg-width'"
+  >
+    <mat-card>
+      <div class="less-spacing">{{ msg.text }}</div>
+      <mat-card-subtitle>
+        {{ lookupUsername(msg.uid) }}
+      </mat-card-subtitle>
+    </mat-card>
+  </div>
+
+  <div class="spaced">
+    <mat-form-field class="full-width">
+      <mat-label *ngIf="messages.length == 0">Let's break the ice!</mat-label>
+      <mat-label *ngIf="messages.length > 0">Enter message here</mat-label>
+      <input
+        matInput
+        #messageField
+        maxlength="300"
+        type="text"
+        class="full-width"
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="nextMessage"
+      />
+      <mat-hint align="end">{{ messageField.value.length }} / 300</mat-hint>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="sendMessage()"
+      class="full-width"
+    >
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</div>

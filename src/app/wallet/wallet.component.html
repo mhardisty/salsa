@@ -1,4 +1,68 @@
-<button mat-button *ngIf="publicKey==null" (click)="generateKeyPair()">Generate keys</button>
-<!-- <button mat-button *ngIf="publicKey==null" (click)="requestSol()">Request soul</button> -->
-<p>Public Key: {{ publicKey }}</p>
-<p>Private Key: {{ secretKey }}</p>
+<div class="outer">
+  <h1>My Profile</h1>
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel *ngFor="let key of keys" (opened)="checkBalance(key.key)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ key.nickname }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ key.primary ? "Primary" : "" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <p *ngIf="hasBalance(key.key)">
+          <strong>Balance: </strong>{{ getBalance(key.key) }} SOL
+        </p>
+      </div>
+      <mat-action-row>
+        <button mat-button class="full-size" (click)="requestAirDrop(key.key)">
+          <mat-icon>credit_card</mat-icon>Add funds
+        </button>
+      </mat-action-row>
+      <mat-action-row>
+        <button mat-button class="full-size" color="accent" [cdkCopyToClipboard]="key.key">
+          <mat-icon>content_copy</mat-icon>Copy Public Key
+        </button>
+      </mat-action-row>
+
+      <mat-action-row>
+        <button mat-button class="full-size" color="warn" (click)="deleteKey(key)">
+          <mat-icon>delete</mat-icon>Discard
+        </button>
+      </mat-action-row>
+      <mat-action-row>
+        <button mat-button class="full-size" color="primary" (click)="setAsPrimary(key.id)">
+          <mat-icon>check</mat-icon>Set as primary
+        </button>
+      </mat-action-row>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <button
+    mat-raised-button
+    class="half-size"
+    (click)="goToKeyCreator()"
+    color="primary"
+  >
+    <mat-icon>add</mat-icon>Create
+  </button>
+  <button
+    mat-raised-button
+    class="half-size"
+    (click)="goToKeyImporter()"
+    color="accent"
+  >
+    <mat-icon>download</mat-icon>Import
+  </button>
+
+  <div class="bottom-section">
+    <button mat-raised-button class="full-size" (click)="goToUsernameForm()">
+      <mat-icon>settings</mat-icon> Change Username
+    </button>
+  </div>
+  <app-goto-login [message]="'Come on! Sign up! You\'ll love it!'"></app-goto-login>
+
+  <app-logout-button></app-logout-button>
+</div>

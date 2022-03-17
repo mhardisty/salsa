@@ -1,0 +1,24 @@
+.example-full-width {
+  width: 100%;
+}
+
+.save-warning {
+  width: 100%;
+  position: absolute;
+  top: 85vh;
+  transform: translateY(-100%);
+}
+
+.outer {
+  margin: 5%;
+}
+
+button {
+  width: 100%;
+  position: absolute;
+  top: 95vh;
+  transform: translateY(-100%);
+}
+h1 {
+  font-weight: bold;
+}

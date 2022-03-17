@@ -1,0 +1,38 @@
+.outer {
+  margin: 5%;
+}
+
+.table-padder {
+    margin-top: 40px;
+}
+
+button {
+  width: 100%;
+  position: absolute;
+  top: 95vh;
+  transform: translateY(-100%);
+}
+
+.save-warning {
+    width: 100%;
+    position: absolute;
+    top: 85vh;
+    transform: translateY(-100%); 
+}
+
+table {
+  width: 100%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+h1 {
+  font-weight: bold;
+}

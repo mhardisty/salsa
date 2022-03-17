@@ -1,0 +1,35 @@
+.full-width {
+    width: 100%
+}
+
+.outer {
+    padding: 5%;
+}
+
+.conversation {
+    margin-bottom: 5px;
+}
+
+.participant {
+    font-size: x-large;
+}
+
+.from-side {
+    width: 45%;
+    float: left;
+    font-weight: bold;
+}
+
+.to-side {
+    width: 45%;
+    float: right;
+    text-align: right;
+    font-weight: bold;
+}
+
+h1 {
+    font-weight: bold;
+}
+mat-card {
+    border: 1px solid rgb(63, 81, 181);
+}

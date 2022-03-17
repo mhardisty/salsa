@@ -1,0 +1,23 @@
+<div>
+  <h3 *ngIf="memo !== null">Memo: {{ this.memo }}</h3>
+  <h3 *ngIf="message !== null">Message: {{ this.message }}</h3>
+  <h3 *ngIf="amount">Amount: {{ this.amount }}</h3>
+  <button
+    mat-raised-button
+    color="accent"
+    class="spaced full-width"
+    *ngIf="!approved"
+    (click)="approve()"
+  >
+    Approve Payment
+  </button>
+
+  <button mat-raised-button class="full-width" color="warn" *ngIf="!approved">Cancel</button>
+  <app-select-and-pay
+    *ngIf="approved"
+    [recipient]="recipient"
+    [amount]="amount"
+    [reference]="reference"
+    [memo]="memo"
+  ></app-select-and-pay>
+</div>

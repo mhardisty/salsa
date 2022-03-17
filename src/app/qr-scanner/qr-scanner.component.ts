@@ -1,4 +1,10 @@
-import { Component, ViewChild, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  OnInit,
+  AfterViewInit,
+} from '@angular/core';
 import jsQR from 'jsqr';
 
 @Component({
@@ -19,17 +25,17 @@ export class QrScannerComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
+  ngAfterViewInit() {
+    this.canvasElement = this.canvas.nativeElement;
+    this.canvasContext = this.canvasElement.getContext('2d');
+    this.videoElement = this.video.nativeElement;
   }
 
-ngAfterViewInit(){
-  this.canvasElement = this.canvas.nativeElement;
-  this.canvasContext = this.canvasElement.getContext('2d');
-  this.videoElement = this.video.nativeElement;
-  console.log('videoElement should be initialized');
-  console.log(this.videoElement);
-}
+  ngOnDestroy(): void {
+    this.stopScan();
+  }
 
   async startScan() {
     // Not working on iOS standalone mode!
@@ -90,7 +96,7 @@ ngAfterViewInit(){
     this.scanActive = false;
     this.videoElement.srcObject = null;
     this.videoElement = null;
-    this.stream.getTracks().forEach(function(track) {
+    this.stream.getTracks().forEach(function (track) {
       track.stop();
     });
   }
