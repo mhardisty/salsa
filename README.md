@@ -1,7 +1,8 @@
 # Salsa
 
-This project was created for the [Solana Riptide Hackathon](https://solana.com/riptide). 
-A live demo can be found [here](https://solana-salsa.web.app/). 
+Salsa is a payments app developed with Solana. Please check out [the live demo](https://solana-salsa.web.app/).  
+
+This project was created for the [Solana Riptide Hackathon](https://solana.com/riptide).  
 
 Salsa was being developed as a Progressive Web App with Angular 13.
 
