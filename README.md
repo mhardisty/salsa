@@ -11,7 +11,7 @@ Salsa was being developed as a Progressive Web App with Angular 13.
 [Video](https://youtu.be/5le1V1bh6yc)
 
 ## Front end
-[Angular](https://angular.io/) is used for the user interface
+[Angular](https://angular.io/) is used for the user interface  
 [Angular Material](https://material.angular.io/) is used for the design scheme.
 
 ## Back end
