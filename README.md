@@ -5,7 +5,7 @@ Salsa is a payments app developed with Solana. This project was created for the 
 Salsa was being developed as a Progressive Web App with Angular 13.
 
 ## Check out our submission
-[Live Demo](https://solana-salsa.web.app/)
+[Live Demo](https://solana-salsa.web.app/)  
 [Presentation](https://drive.google.com/file/d/1_XfwFj9TqF5uW40x0uIOtdqIPf2nne5L/view?usp=sharing)  
 [Video](https://youtu.be/5le1V1bh6yc)
 
