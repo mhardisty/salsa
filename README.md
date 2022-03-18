@@ -20,5 +20,5 @@ Salsa was being developed as a Progressive Web App with Angular 13.
 ## Payments
 [Solana Pay](https://docs.solanapay.com/) was used for QR code generation and scanning.
 
-## Thanks
+## Acknowledgements  
 Our app heavily leveraged [this project](https://github.com/RaphaelJenni/FirebaseUI-Angular) for our main login page. 
